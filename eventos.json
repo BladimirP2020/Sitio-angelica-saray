@@ -1,0 +1,40 @@
+{
+  "items": [
+    {
+      "dia": "21",
+      "mes": "Ago 2026",
+      "titulo": "Taller virtual: Divorcio sin conflicto",
+      "descripcion": "Rutas de mutuo acuerdo, tiempos reales y errores comunes al iniciar el proceso.",
+      "etiquetas": [
+        "Virtual",
+        "6:00 p.m.",
+        "Cupo limitado"
+      ],
+      "enlace": "https://wa.me/573112262633?text=Hola%2C%20quiero%20inscribirme%20al%20taller%20de%20divorcio%20sin%20conflicto"
+    },
+    {
+      "dia": "12",
+      "mes": "Sep 2026",
+      "titulo": "Conversatorio: Derechos de los hijos en la separación",
+      "descripcion": "Custodia, visitas y alimentos explicados de forma práctica para padres y madres.",
+      "etiquetas": [
+        "Presencial",
+        "10:00 a.m.",
+        "Bogotá"
+      ],
+      "enlace": "https://wa.me/573112262633?text=Hola%2C%20quiero%20inscribirme%20al%20conversatorio%20sobre%20derechos%20de%20los%20hijos"
+    },
+    {
+      "dia": "03",
+      "mes": "Oct 2026",
+      "titulo": "Sesión de asesoría grupal: Sucesiones y herencias",
+      "descripcion": "Qué documentos preparar y cómo evitar conflictos entre herederos.",
+      "etiquetas": [
+        "Virtual",
+        "5:30 p.m.",
+        "Cupo limitado"
+      ],
+      "enlace": "https://wa.me/573112262633?text=Hola%2C%20quiero%20inscribirme%20a%20la%20sesi%C3%B3n%20de%20sucesiones"
+    }
+  ]
+}
