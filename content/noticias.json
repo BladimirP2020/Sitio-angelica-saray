@@ -1,0 +1,28 @@
+{
+  "items": [
+    {
+      "categoria": "Alimentos",
+      "fecha": "05 AGO 2026",
+      "tiempo": "4 min",
+      "titulo": "Cuota de alimentos 2026: qué cambia en la revisión de montos",
+      "resumen": "Criterios que suelen considerar los despachos al ajustar una obligación alimentaria vigente.",
+      "enlace": "#contacto"
+    },
+    {
+      "categoria": "Custodia",
+      "fecha": "22 JUL 2026",
+      "tiempo": "5 min",
+      "titulo": "Custodia compartida: en qué casos resulta procedente",
+      "resumen": "Un panorama práctico sobre los requisitos y el rol del interés superior del menor.",
+      "enlace": "#contacto"
+    },
+    {
+      "categoria": "Unión marital",
+      "fecha": "10 JUL 2026",
+      "tiempo": "6 min",
+      "titulo": "Unión marital de hecho vs. matrimonio: diferencias patrimoniales",
+      "resumen": "Qué protege cada figura y cómo declarar o disolver la sociedad patrimonial.",
+      "enlace": "#contacto"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Cuando se suba una imagen desde el panel, se guardará aquí:
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+locale: "es"
+
+collections:
+  - name: "noticias"
+    label: "Noticias"
+    label_singular: "lista de noticias"
+    files:
+      - file: "content/noticias.json"
+        label: "Noticias del sitio"
+        name: "noticias"
+        fields:
+          - label: "Artículos"
+            name: "items"
+            widget: "list"
+            label_singular: "Noticia"
+            summary: "{{titulo}}"
+            fields:
+              - {label: "Categoría", name: "categoria", widget: "string", hint: "Ej: Alimentos, Custodia, Sucesiones"}
+              - {label: "Fecha a mostrar", name: "fecha", widget: "string", hint: "Ej: 05 AGO 2026"}
+              - {label: "Tiempo de lectura", name: "tiempo", widget: "string", default: "4 min"}
+              - {label: "Título", name: "titulo", widget: "string"}
+              - {label: "Resumen breve", name: "resumen", widget: "text"}
+              - {label: "Enlace (opcional)", name: "enlace", widget: "string", default: "#contacto", hint: "Puede ser #contacto o la URL de un artículo externo"}
+
+  - name: "eventos"
+    label: "Eventos"
+    label_singular: "lista de eventos"
+    files:
+      - file: "content/eventos.json"
+        label: "Eventos del sitio"
+        name: "eventos"
+        fields:
+          - label: "Eventos"
+            name: "items"
+            widget: "list"
+            label_singular: "Evento"
+            summary: "{{titulo}}"
+            fields:
+              - {label: "Día (número)", name: "dia", widget: "string", hint: "Ej: 21"}
+              - {label: "Mes y año", name: "mes", widget: "string", hint: "Ej: Ago 2026"}
+              - {label: "Título", name: "titulo", widget: "string"}
+              - {label: "Descripción breve", name: "descripcion", widget: "text"}
+              - label: "Etiquetas"
+                name: "etiquetas"
+                widget: "list"
+                hint: "Ej: Virtual, 6:00 p.m., Cupo limitado (máximo 3 para que se vea bien)"
+              - {label: "Enlace de inscripción (WhatsApp u otro)", name: "enlace", widget: "string"}
