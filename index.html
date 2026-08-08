@@ -1,24 +1,400 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="robots" content="noindex">
-  <title>Panel de administración · Angélica Saray</title>
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Angélica Saray — Abogada especialista en Derecho de Familia. Asesoría en divorcio, custodia, alimentos, unión marital, sucesiones y conciliación. Consulta virtual o presencial.">
+<title>Angélica Saray | Abogada especialista en Derecho de Familia</title>
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="styles.css">
+<script src="script.js" defer></script>
 </head>
 <body>
-  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
-  <script>
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.on('init', function (user) {
-        if (!user) {
-          window.netlifyIdentity.on('login', function () {
-            document.location.href = '/admin/';
-          });
-        }
-      });
-    }
-  </script>
+
+<!-- ============ MONOGRAM (reused) ============ -->
+<svg style="display:none">
+  <symbol id="markAS" viewBox="0 0 48 48">
+    <circle cx="24" cy="24" r="22.5" fill="none" stroke="currentColor" stroke-width="1"/>
+    <line x1="16" y1="31" x2="24" y2="15" stroke="currentColor" stroke-width="1"/>
+    <text x="24" y="30" text-anchor="middle" font-family="Georgia, serif" font-size="17" fill="currentColor">AS</text>
+  </symbol>
+  <symbol id="icoWhatsapp" viewBox="0 0 24 24"><path fill="currentColor" d="M12.03 2C6.5 2 2 6.48 2 12c0 1.86.5 3.6 1.4 5.1L2 22l5.06-1.33A9.96 9.96 0 0 0 12.03 22C17.55 22 22 17.52 22 12S17.55 2 12.03 2Zm5.86 14.2c-.25.7-1.24 1.28-2.02 1.44-.55.11-1.26.2-3.66-.77-3.07-1.24-5.05-4.33-5.2-4.53-.15-.2-1.24-1.65-1.24-3.15s.78-2.23 1.06-2.53c.27-.3.6-.37.8-.37h.58c.19 0 .44-.07.68.53.25.6.85 2.08.92 2.23.07.15.12.33.02.53-.1.2-.15.33-.3.5-.15.18-.31.4-.44.53-.15.15-.3.31-.13.6.17.3.75 1.26 1.62 2.05 1.11 1.02 2.05 1.34 2.34 1.5.3.15.47.13.64-.08.17-.2.72-.86.92-1.16.2-.3.4-.25.66-.15.27.1 1.7.83 1.99 1 .3.15.5.23.57.36.07.13.07.75-.18 1.45Z"/></symbol>
+  <symbol id="icoMail" viewBox="0 0 24 24"><path fill="currentColor" d="M4 5h16a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm1.4 2 6.4 5.13a.5.5 0 0 0 .62 0L18.8 7H5.4ZM19 17V8.9l-6.55 5.24a1.5 1.5 0 0 1-1.9 0L4 8.9V17h15Z"/></symbol>
+  <symbol id="icoLinkedin" viewBox="0 0 24 24"><path fill="currentColor" d="M6.94 5a1.94 1.94 0 1 1 0-3.88 1.94 1.94 0 0 1 0 3.88ZM5.1 8.24h3.68V21H5.1V8.24Zm6.32 0h3.53v1.74h.05c.49-.9 1.7-1.86 3.5-1.86 3.75 0 4.44 2.36 4.44 5.44V21h-3.68v-5.9c0-1.4-.03-3.2-2.03-3.2-2.03 0-2.34 1.5-2.34 3.1V21h-3.67V8.24Z"/></symbol>
+  <symbol id="icoInstagram" viewBox="0 0 24 24"><path fill="currentColor" d="M8 3h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H8Zm4 3.5A4.5 4.5 0 1 1 7.5 13 4.5 4.5 0 0 1 12 8.5Zm0 2A2.5 2.5 0 1 0 14.5 13 2.5 2.5 0 0 0 12 10.5Zm5-3.3a1.05 1.05 0 1 1 0 2.1 1.05 1.05 0 0 1 0-2.1Z"/></symbol>
+  <symbol id="icoTiktok" viewBox="0 0 24 24"><path fill="currentColor" d="M14.5 2h2.9c.16 1.4.8 2.63 1.9 3.5 1 .82 2.2 1.24 3.5 1.28v2.94a7.9 7.9 0 0 1-4.5-1.42v6.5c0 3.4-2.4 5.7-5.6 5.7-2.1 0-3.9-1.02-4.9-2.7a5.7 5.7 0 0 1-.7-2.8c0-3.2 2.5-5.6 5.7-5.6.35 0 .7.03 1 .1v3.05a2.7 2.7 0 0 0-1-.2 2.6 2.6 0 0 0-2.6 2.6 2.6 2.6 0 0 0 2.6 2.6c1.5 0 2.7-1.1 2.7-2.9V2Z"/></symbol>
+  <symbol id="icoFacebook" viewBox="0 0 24 24"><path fill="currentColor" d="M13.5 21v-7.6h2.55l.38-2.96h-2.93V8.53c0-.86.24-1.44 1.47-1.44h1.57V4.46A21 21 0 0 0 14.2 4.3c-2.27 0-3.83 1.38-3.83 3.93v2.2H7.8v2.97h2.57V21h3.13Z"/></symbol>
+  <symbol id="icoMenu" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="icoClose" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M5 5l14 14M19 5 5 19"/></symbol>
+  <symbol id="icoArrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></symbol>
+</svg>
+
+<main>
+
+<!-- ============ HEADER ============ -->
+<header class="navWrap">
+  <div class="navInner">
+    <a class="brand" href="#inicio" aria-label="Ir al inicio">
+      <span class="logoChip logoChip-nav"><img src="assets/logo-mark.png" alt="Logo de Angélica Saray"></span>
+      <span><strong>Angélica Saray</strong><small>Abogada de familia</small></span>
+    </a>
+    <nav aria-label="Navegación principal">
+      <a href="#servicios">Servicios</a>
+      <a href="#perfil">Perfil</a>
+      <a href="#metodo">Método</a>
+      <a href="#noticias">Noticias</a>
+      <a href="#eventos">Eventos</a>
+      <a href="#preguntas">Preguntas</a>
+    </nav>
+    <div class="navActions">
+      <a class="iconLink" href="https://wa.me/573112262633?text=Hola%2C%20quisiera%20agendar%20una%20consulta%20con%20la%20Dra.%20Saray" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp"><svg width="17" height="17"><use href="#icoWhatsapp"/></svg></a>
+      <a class="navCta" href="#contacto">Agendar consulta <span>↗</span></a>
+      <button class="menuToggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileNav">
+        <svg><use href="#icoMenu" id="menuIcon"/></svg>
+      </button>
+    </div>
+  </div>
+
+</header>
+<nav id="mobileNav" class="mobileNav" aria-label="Navegación móvil">
+  <a href="#servicios">Servicios</a>
+  <a href="#perfil">Perfil</a>
+  <a href="#metodo">Método</a>
+  <a href="#noticias">Noticias</a>
+  <a href="#eventos">Eventos</a>
+  <a href="#preguntas">Preguntas</a>
+  <a class="navCta" href="#contacto">Agendar consulta <span>↗</span></a>
+</nav>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="inicio" style="padding-top:0;padding-bottom:0">
+  <div class="gridLines"></div>
+  <div class="heroGlow"></div>
+  <div class="heroGrid">
+    <div>
+      <p class="docketRef">EXP · DERECHO DE FAMILIA · 2026</p>
+      <h1>Decisiones jurídicas claras para proteger <em>lo que más importa.</em></h1>
+      <p class="heroLead">Acompañamiento humano, confidencial y técnicamente riguroso para resolver asuntos familiares — con procesos digitales que le permiten seguir su caso con la misma claridad con la que se lo explico.</p>
+      <div class="heroActions">
+        <a class="btn btn-primary" href="#contacto">Solicitar valoración <svg width="14" height="14"><use href="#icoArrow"/></svg></a>
+        <a class="btn btn-wa" href="https://wa.me/573112262633?text=Hola%2C%20quisiera%20agendar%20una%20consulta%20con%20la%20Dra.%20Saray" target="_blank" rel="noopener"><svg width="16" height="16"><use href="#icoWhatsapp"/></svg> Escribir por WhatsApp</a>
+        <a class="btn btn-ghost" href="#servicios">Conocer servicios</a>
+      </div>
+      <div class="heroStats">
+        <div><strong>Atención híbrida</strong><small>Virtual y presencial</small></div>
+        <div><strong>Seguimiento digital</strong><small>Del caso, paso a paso</small></div>
+        <div><strong>Confidencialidad</strong><small>Manejo reservado</small></div>
+      </div>
+    </div>
+
+    <!-- Signature: digital case panel -->
+    <div class="casePanel" aria-hidden="false">
+      <div class="panelTop">
+        <div class="panelStatus"><span class="dot"></span> Consulta virtual disponible</div>
+        <span class="panelId">CASO · REF 014</span>
+      </div>
+      <div class="panelBody">
+        <h3>Estado del proceso</h3>
+        <div class="flowTrack">
+          <div class="flowStep active"><b>1</b><small>Escucha</small></div>
+          <div class="flowStep"><b>2</b><small>Diagnóstico</small></div>
+          <div class="flowStep"><b>3</b><small>Estrategia</small></div>
+          <div class="flowStep"><b>4</b><small>Acompaña</small></div>
+        </div>
+      </div>
+      <div class="panelNote">
+        <span>PRÓXIMA DISPONIBILIDAD</span>
+        <strong>Mañana · 9:00 a.m.</strong>
+      </div>
+      <div class="panelFoot">
+        <div class="sig">
+          <span class="logoChip logoChip-sig"><img src="assets/logo-mark.png" alt="Angélica Saray"></span>
+          <span>Angélica Saray</span>
+        </div>
+        <small>Actualizado hoy</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INTRO / SERVICES ============ -->
+<section class="services" id="servicios">
+  <div class="sectionIntro reveal">
+    <div><p class="sectionLabel">Áreas de práctica</p></div>
+    <div><h2>Soluciones legales para cada etapa de su familia.</h2><p>Cada estrategia se construye a partir de los hechos, las prioridades y los riesgos reales del caso — sin fórmulas genéricas.</p></div>
+  </div>
+  <div class="serviceGrid reveal">
+    <article class="serviceCard"><span class="tag-mono">CASO · 01</span><h3>Divorcio y separación</h3><p>Orientación clara para divorcios de mutuo acuerdo o contenciosos, liquidación de sociedad conyugal y acuerdos patrimoniales.</p><a href="#contacto">Consultar servicio <svg width="12" height="12"><use href="#icoArrow"/></svg></a></article>
+    <article class="serviceCard"><span class="tag-mono">CASO · 02</span><h3>Custodia y visitas</h3><p>Acompañamiento enfocado en el interés superior de niños, niñas y adolescentes, con soluciones viables y sostenibles.</p><a href="#contacto">Consultar servicio <svg width="12" height="12"><use href="#icoArrow"/></svg></a></article>
+    <article class="serviceCard"><span class="tag-mono">CASO · 03</span><h3>Cuota de alimentos</h3><p>Fijación, revisión, exoneración y cumplimiento de obligaciones alimentarias, con análisis responsable de cada situación.</p><a href="#contacto">Consultar servicio <svg width="12" height="12"><use href="#icoArrow"/></svg></a></article>
+    <article class="serviceCard"><span class="tag-mono">CASO · 04</span><h3>Unión marital de hecho</h3><p>Declaración, disolución y liquidación de la sociedad patrimonial entre compañeros permanentes.</p><a href="#contacto">Consultar servicio <svg width="12" height="12"><use href="#icoArrow"/></svg></a></article>
+    <article class="serviceCard"><span class="tag-mono">CASO · 05</span><h3>Sucesiones</h3><p>Asesoría en sucesiones notariales o judiciales, partición de bienes y protección de los derechos hereditarios.</p><a href="#contacto">Consultar servicio <svg width="12" height="12"><use href="#icoArrow"/></svg></a></article>
+    <article class="serviceCard"><span class="tag-mono">CASO · 06</span><h3>Conciliación familiar</h3><p>Construcción de acuerdos jurídicamente sólidos para reducir el desgaste emocional, económico y familiar.</p><a href="#contacto">Consultar servicio <svg width="12" height="12"><use href="#icoArrow"/></svg></a></article>
+  </div>
+</section>
+
+<!-- ============ PROFILE ============ -->
+<section class="profile" id="perfil" style="padding-left:0;padding-right:0">
+  <div class="profileGrid wrap">
+  <div class="profileArt reveal">
+    <div class="profilePlate">
+      <span class="logoChip logoChip-plate"><img src="assets/logo-mark.png" alt="Logo de Angélica Saray"></span>
+    </div>
+    <p class="profileQuote">“El derecho de familia no trata solo de procesos; trata de personas, vínculos y decisiones que transforman vidas.”</p>
+  </div>
+  <div class="profileCopy reveal">
+    <p class="sectionLabel light">Perfil profesional</p>
+    <h2>Experiencia jurídica con una mirada humana y contemporánea.</h2>
+    <p class="lede">Soy <strong>Angélica Viviana Saray Piraquive</strong>, abogada especialista en Derecho de Familia. Acompaño a personas y familias en momentos decisivos, transformando situaciones complejas en rutas jurídicas comprensibles.</p>
+    <p class="body">Mi práctica integra análisis riguroso, comunicación transparente y herramientas digitales que facilitan una atención ágil, organizada y segura — desde el primer contacto hasta el cierre del caso.</p>
+    <div class="credRow">
+      <div><b>01</b><strong>Especialista</strong><small>Derecho de familia</small></div>
+      <div><b>02</b><strong>Atención híbrida</strong><small>Presencial y virtual</small></div>
+      <div><b>03</b><strong>Enfoque preventivo</strong><small>Negociación y litigio estratégico</small></div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<!-- ============ METHOD ============ -->
+<section class="method" id="metodo">
+  <div class="sectionIntro reveal">
+    <div><p class="sectionLabel">Metodología</p></div>
+    <div><h2>Un proceso claro, de principio a fin.</h2><p>Usted conoce el estado de su asunto, las alternativas disponibles y el siguiente paso — sin tecnicismos innecesarios.</p></div>
+  </div>
+  <div class="methodGrid reveal">
+    <div class="methodStep"><b>01 · ESCUCHAR</b><h3>Escucha</h3><p>Valoración confidencial de su situación, prioridades y documentos.</p></div>
+    <div class="methodStep"><b>02 · ANALIZAR</b><h3>Diagnóstico</h3><p>Análisis jurídico, identificación de riesgos y alternativas posibles.</p></div>
+    <div class="methodStep"><b>03 · PROPONER</b><h3>Estrategia</h3><p>Propuesta de ruta, alcance, tiempos estimados y honorarios.</p></div>
+    <div class="methodStep"><b>04 · EJECUTAR</b><h3>Acompañamiento</h3><p>Ejecución, seguimiento y comunicación durante todo el proceso.</p></div>
+  </div>
+</section>
+
+<!-- ============ NOTICIAS ============ -->
+<section class="news" id="noticias">
+  <div class="sectionIntro reveal">
+    <div><p class="sectionLabel">Actualidad jurídica</p></div>
+    <div><h2>Noticias y análisis en derecho de familia.</h2><p>Contenido de orientación general sobre cambios normativos y criterios que pueden afectar su caso.</p></div>
+  </div>
+  <div class="newsGrid reveal" id="newsGrid">
+    <article class="newsCard">
+      <div class="newsMedia"><span>Alimentos</span></div>
+      <div class="newsBody">
+        <div class="newsMeta"><span>05 AGO 2026</span><span>·</span><span>4 min</span></div>
+        <h3>Cuota de alimentos 2026: qué cambia en la revisión de montos</h3>
+        <p>Criterios que suelen considerar los despachos al ajustar una obligación alimentaria vigente.</p>
+        <a href="#contacto">Leer más <svg width="11" height="11"><use href="#icoArrow"/></svg></a>
+      </div>
+    </article>
+    <article class="newsCard">
+      <div class="newsMedia"><span>Custodia</span></div>
+      <div class="newsBody">
+        <div class="newsMeta"><span>22 JUL 2026</span><span>·</span><span>5 min</span></div>
+        <h3>Custodia compartida: en qué casos resulta procedente</h3>
+        <p>Un panorama práctico sobre los requisitos y el rol del interés superior del menor.</p>
+        <a href="#contacto">Leer más <svg width="11" height="11"><use href="#icoArrow"/></svg></a>
+      </div>
+    </article>
+    <article class="newsCard">
+      <div class="newsMedia"><span>Unión marital</span></div>
+      <div class="newsBody">
+        <div class="newsMeta"><span>10 JUL 2026</span><span>·</span><span>6 min</span></div>
+        <h3>Unión marital de hecho vs. matrimonio: diferencias patrimoniales</h3>
+        <p>Qué protege cada figura y cómo declarar o disolver la sociedad patrimonial.</p>
+        <a href="#contacto">Leer más <svg width="11" height="11"><use href="#icoArrow"/></svg></a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ============ EVENTOS ============ -->
+<section class="events" id="eventos">
+  <div class="eventsIntro reveal">
+    <div><p class="sectionLabel light">Agenda</p></div>
+    <div><h2>Talleres y espacios de orientación.</h2><p>Sesiones virtuales y presenciales abiertas para resolver dudas frecuentes en derecho de familia.</p></div>
+  </div>
+  <div class="eventList reveal" id="eventList">
+    <div class="eventRow">
+      <div class="eventDate"><b>21</b><small>Ago 2026</small></div>
+      <div class="eventInfo">
+        <h3>Taller virtual: Divorcio sin conflicto</h3>
+        <p>Rutas de mutuo acuerdo, tiempos reales y errores comunes al iniciar el proceso.</p>
+        <div class="eventTags"><span>Virtual</span><span>6:00 p.m.</span><span>Cupo limitado</span></div>
+      </div>
+      <a class="eventCta" href="https://wa.me/573112262633?text=Hola%2C%20quiero%20inscribirme%20al%20taller%20de%20divorcio%20sin%20conflicto" target="_blank" rel="noopener">Reservar cupo</a>
+    </div>
+    <div class="eventRow">
+      <div class="eventDate"><b>12</b><small>Sep 2026</small></div>
+      <div class="eventInfo">
+        <h3>Conversatorio: Derechos de los hijos en la separación</h3>
+        <p>Custodia, visitas y alimentos explicados de forma práctica para padres y madres.</p>
+        <div class="eventTags"><span>Presencial</span><span>10:00 a.m.</span><span>Bogotá</span></div>
+      </div>
+      <a class="eventCta" href="https://wa.me/573112262633?text=Hola%2C%20quiero%20inscribirme%20al%20conversatorio%20sobre%20derechos%20de%20los%20hijos" target="_blank" rel="noopener">Reservar cupo</a>
+    </div>
+    <div class="eventRow">
+      <div class="eventDate"><b>03</b><small>Oct 2026</small></div>
+      <div class="eventInfo">
+        <h3>Sesión de asesoría grupal: Sucesiones y herencias</h3>
+        <p>Qué documentos preparar y cómo evitar conflictos entre herederos.</p>
+        <div class="eventTags"><span>Virtual</span><span>5:30 p.m.</span><span>Cupo limitado</span></div>
+      </div>
+      <a class="eventCta" href="https://wa.me/573112262633?text=Hola%2C%20quiero%20inscribirme%20a%20la%20sesi%C3%B3n%20de%20sucesiones" target="_blank" rel="noopener">Reservar cupo</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRINCIPLES ============ -->
+<section class="principles">
+  <div class="principlesGrid reveal">
+    <div>
+      <p class="sectionLabel">Compromiso</p>
+      <h2>Firmeza jurídica.<br><em>Trato humano.</em></h2>
+    </div>
+    <div>
+      <div class="principleItem"><h3>Claridad</h3><p>Explicaciones directas para tomar decisiones informadas.</p></div>
+      <div class="principleItem"><h3>Transparencia</h3><p>Alcance, costos, riesgos y avances comunicados oportunamente.</p></div>
+    </div>
+    <div>
+      <div class="principleItem"><h3>Prudencia</h3><p>Cada actuación considera sus efectos legales, familiares y patrimoniales.</p></div>
+      <div class="principleItem"><h3>Confidencialidad</h3><p>Protección responsable de la información y los documentos del caso.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="faq" id="preguntas">
+  <div class="faqShell reveal">
+    <div>
+      <p class="sectionLabel">Preguntas frecuentes</p>
+      <h2 style="font-size:clamp(28px,3vw,40px);line-height:1.15;margin-top:16px">Información que ayuda a dar el primer paso.</h2>
+      <p>Estas respuestas son generales y no reemplazan una valoración jurídica individual.</p>
+    </div>
+    <div class="faqList">
+      <details open><summary>¿La primera consulta puede ser virtual?<span>＋</span></summary><p>Sí. La valoración inicial puede realizarse virtualmente, con la misma confidencialidad y preparación de una consulta presencial.</p></details>
+      <details><summary>¿Qué documentos debo tener para la consulta?<span>＋</span></summary><p>Depende del caso. Al solicitar la cita recibirá una lista breve de documentos recomendados.</p></details>
+      <details><summary>¿Es obligatorio conciliar antes de iniciar un proceso?<span>＋</span></summary><p>En algunos asuntos de familia la conciliación es requisito previo. En la valoración se determina si aplica.</p></details>
+      <details><summary>¿Cuánto puede tardar un proceso de familia?<span>＋</span></summary><p>El tiempo varía según el trámite, la existencia de acuerdo y la autoridad competente.</p></details>
+      <details><summary>¿Puedo escribir directamente por WhatsApp?<span>＋</span></summary><p>Sí, puede escribir al +57 311 226 2633 para agendar una valoración inicial o resolver dudas breves sobre agenda.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact" id="contacto">
+  <div class="contactGrid">
+    <div>
+      <p class="sectionLabel light">Contacto</p>
+      <h2>Conversemos sobre<br>su situación.</h2>
+      <p class="contactLead">Describa brevemente su consulta o escriba directamente por WhatsApp. La información enviada será tratada de manera reservada.</p>
+
+      <div class="directChannels">
+        <a class="channel" href="https://wa.me/573112262633?text=Hola%2C%20quisiera%20agendar%20una%20consulta%20con%20la%20Dra.%20Saray" target="_blank" rel="noopener">
+          <svg><use href="#icoWhatsapp"/></svg>
+          <div><small>WhatsApp</small><strong>+57 311 226 2633</strong></div>
+        </a>
+        <a class="channel" href="mailto:angelica.saray.lawyer@gmail.com">
+          <svg><use href="#icoMail"/></svg>
+          <div><small>Correo electrónico</small><strong>angelica.saray.lawyer@gmail.com</strong></div>
+        </a>
+      </div>
+
+      <div class="socialRow">
+        <a href="https://linkedin.com/in/angelica.saray.lawyer" target="_blank" rel="noopener" aria-label="LinkedIn"><svg><use href="#icoLinkedin"/></svg></a>
+        <a href="https://instagram.com/angelica.saray.lawyer" target="_blank" rel="noopener" aria-label="Instagram"><svg><use href="#icoInstagram"/></svg></a>
+        <a href="https://tiktok.com/@angelica.saray.lawyer" target="_blank" rel="noopener" aria-label="TikTok"><svg><use href="#icoTiktok"/></svg></a>
+        <a href="https://facebook.com/angelica.saray.lawyer" target="_blank" rel="noopener" aria-label="Facebook"><svg><use href="#icoFacebook"/></svg></a>
+      </div>
+    </div>
+
+    <!-- Reemplace XXXXX por el endpoint real que le entrega Formspree, ej: https://formspree.io/f/abcdwxyz -->
+    <!-- Formulario conectado a Netlify Forms: no requiere cuenta aparte ni endpoint.
+         Netlify lo detecta automáticamente al publicar el sitio gracias a
+         data-netlify="true" y al campo oculto form-name. -->
+    <form id="contactForm" name="contacto" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="contacto">
+      <p style="position:absolute;left:-9999px" aria-hidden="true">
+        <label>No completar este campo: <input name="bot-field"></label>
+      </p>
+      <label>Nombre completo<input name="nombre" required placeholder="Escriba su nombre"></label>
+      <label>Correo electrónico<input type="email" name="correo" required placeholder="nombre@correo.com"></label>
+      <label>Tipo de consulta<select name="tipo" required>
+        <option value="" disabled selected>Seleccione una opción</option>
+        <option>Divorcio y separación</option>
+        <option>Custodia y visitas</option>
+        <option>Cuota de alimentos</option>
+        <option>Unión marital de hecho</option>
+        <option>Sucesiones</option>
+        <option>Conciliación familiar</option>
+      </select></label>
+      <label>Cuéntenos brevemente<textarea name="mensaje" rows="4" required placeholder="¿Cómo podemos orientarle?"></textarea></label>
+      <button type="submit">Enviar solicitud <svg width="15" height="15"><use href="#icoArrow"/></svg></button>
+      <small>El envío de este formulario no constituye una relación abogado-cliente ni garantiza la aceptación del caso.</small>
+      <p id="formNotice" role="status" hidden></p>
+    </form>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="footerInner">
+    <div>
+      <div class="footerBrand">
+        <span class="logoChip logoChip-nav"><img src="assets/logo-mark.png" alt="Logo de Angélica Saray"></span>
+        <span><strong>Angélica Viviana Saray Piraquive</strong><small>Abogada · Especialista en Derecho de Familia</small></span>
+      </div>
+      <div class="footerSocial">
+        <a href="https://linkedin.com/in/angelica.saray.lawyer" target="_blank" rel="noopener" aria-label="LinkedIn"><svg><use href="#icoLinkedin"/></svg></a>
+        <a href="https://instagram.com/angelica.saray.lawyer" target="_blank" rel="noopener" aria-label="Instagram"><svg><use href="#icoInstagram"/></svg></a>
+        <a href="https://tiktok.com/@angelica.saray.lawyer" target="_blank" rel="noopener" aria-label="TikTok"><svg><use href="#icoTiktok"/></svg></a>
+        <a href="https://facebook.com/angelica.saray.lawyer" target="_blank" rel="noopener" aria-label="Facebook"><svg><use href="#icoFacebook"/></svg></a>
+        <a href="https://wa.me/573112262633" target="_blank" rel="noopener" aria-label="WhatsApp"><svg><use href="#icoWhatsapp"/></svg></a>
+      </div>
+    </div>
+    <div class="footerCol">
+      <small>Navegación</small>
+      <div class="links">
+        <a href="#servicios">Servicios</a>
+        <a href="#perfil">Perfil</a>
+        <a href="#noticias">Noticias</a>
+        <a href="#eventos">Eventos</a>
+      </div>
+    </div>
+    <div class="footerCol">
+      <small>Contacto</small>
+      <div class="links">
+        <a href="mailto:angelica.saray.lawyer@gmail.com">angelica.saray.lawyer@gmail.com</a>
+        <a href="https://wa.me/573112262633" target="_blank" rel="noopener">+57 311 226 2633</a>
+        <a href="#preguntas">Preguntas frecuentes</a>
+      </div>
+    </div>
+    <div class="legalNote">
+      <span>© <span id="year">2026</span> Angélica Saray. Todos los derechos reservados.</span>
+      <span>La información del sitio es de carácter general y no sustituye una asesoría individual.</span>
+    </div>
+  </div>
+</footer>
+
+<a class="waFloat" href="https://wa.me/573112262633?text=Hola%2C%20quisiera%20agendar%20una%20consulta%20con%20la%20Dra.%20Saray" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
+  <svg><use href="#icoWhatsapp"/></svg>
+</a>
+
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on('init', function (user) {
+      if (!user) {
+        window.netlifyIdentity.on('login', function () {
+          document.location.href = '/admin/';
+        });
+      }
+    });
+  }
+</script>
+
+</main>
 </body>
 </html>
